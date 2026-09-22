@@ -132,15 +132,15 @@ if (DEMO_ROOT) {
       </div>
       <audio controls preload="metadata" src="${variant.src}"></audio>
       <p class="demo-caption">${TS(variant.caption)}</p>
-      <div class="lane-legend">${LEGEND_ORDER.filter(key => usedCats(variant).includes(key)).map(key => `<span><i class="sw-${key}"></i>${TS(DUPLEX_CATS[key])}</span>`).join('')}<span><i class="sw-agent"></i>${TS('Assistant turn')}</span></div>
+      <div class="lane-legend">${LEGEND_ORDER.filter(key => usedCats(variant).includes(key)).map(key => `<span><i class="sw-${key}"></i>${DUPLEX_CATS[key]}</span>`).join('')}<span><i class="sw-agent"></i>Assistant turn</span></div>
       <div class="timeline" role="img" aria-label="Speech activity timeline: user and assistant channels over ${time(variant.duration)}">
-        ${variant.annos ? `<div class="timeline-row anno-row"><span class="timeline-name"></span><div class="anno-track">${variant.annos.map(a => { const seg = variant.user[a.seg]; const mid = (seg[0] + seg[1]) / 2 / variant.duration * 100; return `<div class="anno" style="left:${mid}%"><span class="anno-text">${TS(a.text)}</span><span class="anno-arrow"></span></div>`; }).join('')}</div></div>` : ''}
-        <div class="timeline-row"><span class="timeline-name user">${TS('Users')}</span><div class="timeline-track">${lane(variant.user, variant.duration, 'user', variant.userCats)}</div></div>
-        <div class="timeline-row"><span class="timeline-name agent">${TS('Assistant')}</span><div class="timeline-track">${lane(variant.agent, variant.duration, 'agent', variant.agentCats)}</div></div>
+        ${variant.annos ? `<div class="timeline-row anno-row"><span class="timeline-name"></span><div class="anno-track">${variant.annos.map(a => { const seg = variant.user[a.seg]; const mid = (seg[0] + seg[1]) / 2 / variant.duration * 100; return `<div class="anno" style="left:${mid}%"><span class="anno-text">${a.text}</span><span class="anno-arrow"></span></div>`; }).join('')}</div></div>` : ''}
+        <div class="timeline-row"><span class="timeline-name user">Users</span><div class="timeline-track">${lane(variant.user, variant.duration, 'user', variant.userCats)}</div></div>
+        <div class="timeline-row"><span class="timeline-name agent">Assistant</span><div class="timeline-track">${lane(variant.agent, variant.duration, 'agent', variant.agentCats)}</div></div>
       </div>
       <div class="timeline-scale">${[0, 0.25, 0.5, 0.75, 1].map(f => `<span>${time(variant.duration * f)}</span>`).join('')}</div>
       <ul class="event-list">${variant.events.map(event =>
-        `<li><button class="event-seek" data-seek="${event.at}" data-variant="${variant.id}"><b>${time(event.at)}</b><span>${TS(event.label)}</span></button></li>`).join('')}</ul>
+        `<li><button class="event-seek" data-seek="${event.at}" data-variant="${variant.id}"><b>${time(event.at)}</b><span>${event.label}</span></button></li>`).join('')}</ul>
     </div>`;
   }
 
@@ -153,8 +153,8 @@ if (DEMO_ROOT) {
     <div class="ml-list">${demo.transcript.map((turn, index) => {
       const cut = demo.turns[index];
       return `<div class="ml-row ${turn.role}">
-        <div class="ml-audio"><audio controls preload="none" src="${cut.src}"></audio><span class="ml-time">${time(cut.at[0])} – ${time(cut.at[1])} · ${T(`turn ${index + 1}`, `第 ${index + 1} 轮`) }</span></div>
-        <div class="ml-text"><span class="turn-meta"><b>${TS(turn.role === 'user' ? 'User' : 'Assistant')}</b><i>${turn.lang}</i></span><p>${turn.text}</p></div>
+        <div class="ml-audio"><audio controls preload="none" src="${cut.src}"></audio><span class="ml-time">${time(cut.at[0])} – ${time(cut.at[1])} · turn ${index + 1}</span></div>
+        <div class="ml-text"><span class="turn-meta"><b>${turn.role === 'user' ? 'User' : 'Assistant'}</b><i>${turn.lang}</i></span><p>${turn.text}</p></div>
       </div>`;
     }).join('')}</div>`,
     duplex: demo => `<div class="duplex-grid">${demo.variants.map(variant =>
