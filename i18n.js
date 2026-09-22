@@ -138,7 +138,7 @@
   };
 
   const OVERVIEW_EN = 'assets/overview.svg?v=25';
-  const OVERVIEW_ZH = 'assets/overview-zh.svg?v=2';
+  const OVERVIEW_ZH = 'assets/overview-zh.svg?v=3';
   function applyOverview() {
     const figure = document.querySelector('#overview');
     if (!figure) return;
