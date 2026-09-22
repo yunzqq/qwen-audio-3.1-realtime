@@ -101,7 +101,7 @@
     '#benchmarks .eyebrow': '实力，由数据印证',
     '#benchmarks h2': '强大基座<br>进阶智能体',
     '#benchmarks .section-heading > p': '以下数据摘自技术报告。精确数值、指标定义与对比范围等<br class="desktop-break">详细信息，请参阅完整报告。',
-    '#tab-intelligence': '认知能力',
+    '#tab-intelligence': '通用智能',
     '#tab-multilingual': '多语言',
     '#tab-action': '执行能力',
     '#tab-empathy': '角色与共情',
