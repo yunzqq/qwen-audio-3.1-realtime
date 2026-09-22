@@ -315,7 +315,7 @@
 <text x="800" y="621" fill="#5431AB" font-size="24" font-weight="700" text-anchor="middle" font-family="Arial,Helvetica,sans-serif">3.1-Realtime</text>
 <rect x="688" y="708" width="224" height="86" rx="11" fill="white" stroke="#D9C9F1"/>
 <text x="800" y="740" fill="#6D48E5" font-size="27" font-weight="700" letter-spacing="2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif">对话不止</text>
-<text x="800" y="778" fill="#6C657D" font-size="22" font-weight="600" letter-spacing="2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif">落地有声</text>
+<text x="800" y="778" fill="#6C657D" font-size="22" font-weight="600" letter-spacing="2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif">持续交付</text>
 <rect x="20" y="916" width="1560" height="164" rx="16" fill="#FAF8FE" stroke="#D8CDEC"/>
 <circle cx="48" cy="944" r="14" fill="#6D48E5"/>
 <text x="48" y="950" fill="white" font-size="16" font-weight="700" text-anchor="middle" font-family="Arial,Helvetica,sans-serif">7</text>
