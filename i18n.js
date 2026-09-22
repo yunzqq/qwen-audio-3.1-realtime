@@ -168,7 +168,7 @@
     window.__rerenderers.forEach(fn => fn());
     const button = document.getElementById('lang-toggle');
     if (button) {
-      button.textContent = window.LANG === 'zh' ? 'EN' : '我们的模型 · 您的数据';
+      button.textContent = window.LANG === 'zh' ? 'EN' : '中文';
       button.setAttribute('aria-pressed', String(window.LANG === 'zh'));
     }
   };
@@ -176,7 +176,7 @@
   applyStatic();
   const toggle = document.getElementById('lang-toggle');
   if (toggle) {
-    toggle.textContent = window.LANG === 'zh' ? 'EN' : '重塑语音 AI';
+    toggle.textContent = window.LANG === 'zh' ? 'EN' : '中文';
     toggle.setAttribute('aria-pressed', String(window.LANG === 'zh'));
     toggle.addEventListener('click', () => window.setLang(window.LANG === 'zh' ? 'en' : 'zh'));
   }
