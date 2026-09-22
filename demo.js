@@ -119,7 +119,7 @@ if (DEMO_ROOT) {
     const left = `${start / duration * 100}%`;
     const width = `${Math.max((end - start) / duration * 100, 0.7)}%`;
     const cat = cats && cats[index] ? ` cat-${cats[index]}` : '';
-    const label = cats && cats[index] ? ' · ' + DUPLEX_CATS[cats[index]] : '';
+    const label = cats && cats[index] ? ' · ' + TS(DUPLEX_CATS[cats[index]]) : '';
     return `<span class="lane-block ${kind}${cat}" style="left:${left};width:${width}" title="${time(start)}–${time(end)}${label}"></span>`;
   }).join('');
 
@@ -132,7 +132,7 @@ if (DEMO_ROOT) {
       </div>
       <audio controls preload="metadata" src="${variant.src}"></audio>
       <p class="demo-caption">${TS(variant.caption)}</p>
-      <div class="lane-legend">${LEGEND_ORDER.filter(key => usedCats(variant).includes(key)).map(key => `<span><i class="sw-${key}"></i>${DUPLEX_CATS[key]}</span>`).join('')}<span><i class="sw-agent"></i>Assistant turn</span></div>
+      <div class="lane-legend">${LEGEND_ORDER.filter(key => usedCats(variant).includes(key)).map(key => `<span><i class="sw-${key}"></i>${TS(DUPLEX_CATS[key])}</span>`).join('')}<span><i class="sw-agent"></i>${TS('Assistant turn')}</span></div>
       <div class="timeline" role="img" aria-label="Speech activity timeline: user and assistant channels over ${time(variant.duration)}">
         ${variant.annos ? `<div class="timeline-row anno-row"><span class="timeline-name"></span><div class="anno-track">${variant.annos.map(a => { const seg = variant.user[a.seg]; const mid = (seg[0] + seg[1]) / 2 / variant.duration * 100; return `<div class="anno" style="left:${mid}%"><span class="anno-text">${a.text}</span><span class="anno-arrow"></span></div>`; }).join('')}</div></div>` : ''}
         <div class="timeline-row"><span class="timeline-name user">Users</span><div class="timeline-track">${lane(variant.user, variant.duration, 'user', variant.userCats)}</div></div>
