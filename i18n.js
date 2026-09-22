@@ -61,7 +61,7 @@
     'User interruption': '用户打断',
     'Semantic control': '语义控制',
     'Resume after hold': '打断后恢复',
-    'Assistant turn': '助手话轮',
+    'Assistant turn': '助手回复',
     'Users': '用户',
     'Assistant': '助手',
     'User': '用户',
